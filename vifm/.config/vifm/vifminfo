@@ -26,9 +26,6 @@ l2
 r2
 
 # Left window history (oldest to newest):
-d/
-	lost+found
-9
 d/lost+found
 	..
 0
@@ -326,6 +323,9 @@ d/root/.dotfiles
 d/root
 	.p10k.zsh
 22
+d/mnt/p/learnC
+	sqrt.c
+2
 d
 
 # Right window history (oldest to newest):

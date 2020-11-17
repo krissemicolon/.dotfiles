@@ -7,3 +7,12 @@ alias ls="ls --color=auto"
 alias la="ls -la --color=auto"
 alias l.='ls -d .* --color=auto'
 
+# git
+kgithub() {
+    "git clone ssh://git@github.com/krissemicolon/$REPOSITORY" $REPOSITORY
+}
+
+# Gentoo aliasses
+# if [[ $OSTYPE == gentoo*  ]]; then
+# alias browse="open -a /Applications/Google\ Chrome.app"
+# fi
