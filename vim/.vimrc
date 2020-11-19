@@ -1,11 +1,12 @@
-"
-"         ██╗   ██╗ ██╗ ███╗   ███╗
-"    ██╗  ██║   ██║ ██║ ████╗ ████║
-"    ╚═╝  ██║   ██║ ██║ ██╔████╔██║
-"    ▄█╗  ╚██╗ ██╔╝ ██║ ██║╚██╔╝██║
-"    ▀═╝   ╚████╔╝  ██║ ██║ ╚═╝ ██║
-"           ╚═══╝   ╚═╝ ╚═╝     ╚═╝
-"
+" ██╗    ██╗   ██╗██╗███╗   ███╗
+" ██║    ██║   ██║██║████╗ ████║
+" ██║    ██║   ██║██║██╔████╔██║
+" ██║    ╚██╗ ██╔╝██║██║╚██╔╝██║
+" ███████╗╚████╔╝ ██║██║ ╚═╝ ██║
+" ╚══════╝ ╚═══╝  ╚═╝╚═╝     ╚═╝
+
+" Forked from https://github.com/krissemicolon/.dotfiles
+" Find this Fork on https://github.com/lianstuder/.dotfiles                          
 
 " Set Leader
 let mapleader = "-"
@@ -122,16 +123,12 @@ let $MYVIMRC="$HOME/.vimrc"
 let $MYBASHRC="$HOME/.bashrc"
 let $MYBSPWMRC="$HOME/.config/bspwm/bspwmrc"
 let $MYSXHKDRC="$HOME/.config/sxhkd/sxhkdrc"
-let $MYMUTTRC="$HOME/.config/neomutt/muttrc"
-let $MYCALCURSERC="$HOME/.config/calcurse/conf"
 
 " ================ Custom Commands =================
 command! Vimrc execute ":e $MYVIMRC" 
 command! Bashrc execute ":e $MYBASHRC" 
 command! Bspwmrc execute ":e $MYBSPWMRC" 
 command! Sxhkdrc execute ":e $MYSXHKDRC" 
-command! Muttrc execute ":e $MYMUTTRC" 
-command! Calcurserc execute ":e $MYCALCURSERC" 
 
 " ================ Custom Keymaps ==================
 nnoremap <Leader>e :Vifm<CR>
@@ -148,15 +145,15 @@ map <Leader>l :wincmd l<CR>
 
 " ================ startify ========================
 let g:startify_custom_header = [
-            \'',
-            \'        ██╗   ██╗ ██╗ ███╗   ███╗',
-            \'   ██╗  ██║   ██║ ██║ ████╗ ████║',
-            \'   ╚═╝  ██║   ██║ ██║ ██╔████╔██║',
-            \'   ▄█╗  ╚██╗ ██╔╝ ██║ ██║╚██╔╝██║',
-            \'   ▀═╝   ╚████╔╝  ██║ ██║ ╚═╝ ██║',
-            \'          ╚═══╝   ╚═╝ ╚═╝     ╚═╝',
-            \'',
-            \ ]
+  \'',
+  \'    ██╗    ██╗   ██╗██╗███╗   ███╗ ',
+  \'    ██║    ██║   ██║██║████╗ ████║ ',
+  \'    ██║    ██║   ██║██║██╔████╔██║ ',
+  \'    ██║    ╚██╗ ██╔╝██║██║╚██╔╝██║ ',
+  \'    ███████╗╚████╔╝ ██║██║ ╚═╝ ██║ ',
+  \'    ╚══════╝ ╚═══╝  ╚═╝╚═╝     ╚═╝ ',
+  \'',
+  \]
 
 " ================ Persistent Undo ==================
 " Keep undo history across sessions, by storing in file.

@@ -1,6 +1,5 @@
 # cd
 alias ..="cd .."
-alias cdp="cd /mnt/p"
 
 # ls
 alias ls="ls --color=auto"
@@ -11,8 +10,3 @@ alias l.='ls -d .* --color=auto'
 kgithub() {
     "git clone ssh://git@github.com/krissemicolon/$REPOSITORY" $REPOSITORY
 }
-
-# Gentoo aliasses
-# if [[ $OSTYPE == gentoo*  ]]; then
-# alias browse="open -a /Applications/Google\ Chrome.app"
-# fi
