@@ -19,7 +19,7 @@ super + Escape
 
 # Lauch Brave-Browser
 ctrl + b
-	brave-browser
+	firefox
 
 # Launch Vim
 super + v

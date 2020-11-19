@@ -8,7 +8,7 @@
 "
 
 " Set Leader
-let mapleader = ";"
+let mapleader = "-"
 
 " ================ Autoinstall vim-plug ============
 if empty(glob('~/.vim/autoload/plug.vim'))
