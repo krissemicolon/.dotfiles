@@ -1,16 +1,16 @@
 # Configure Internet Message Access Protocol for reading mail
 # Username and password for your Gmail or G Suite account
-set imap_user = "kris.n.huber@gmail.com"
-set imap_pass = "3c4789LD"
+set imap_user = "EMAIL"
+set imap_pass = "PASSWORD"
 
-set from = "kris.n.huber@gmail.com"
-set realname = "Kris Huber"
+set from = "EMAIL"
+set realname = "NAME"
 
 set folder = "imaps://imap.gmail.com:993"
 
 # Configure Simple Mail Transfer Protocol for sending mail
-set smtp_url = "smtp://kris.n.huber@gmail.com@smtp.gmail.com:587"
-set smtp_pass = "3c4789LD"
+set smtp_url = "smtp://EMAIL@smtp.gmail.com:587"
+set smtp_pass = "PASSWORD"
 
 # Location of inbox
 set spoolfile = "+INBOX"
