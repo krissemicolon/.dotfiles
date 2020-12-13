@@ -5,8 +5,3 @@ alias ..="cd .."
 alias ls="ls --color=auto"
 alias la="ls -la --color=auto"
 alias l.='ls -d .* --color=auto'
-
-# git
-kgithub() {
-    "git clone ssh://git@github.com/krissemicolon/$REPOSITORY" $REPOSITORY
-}

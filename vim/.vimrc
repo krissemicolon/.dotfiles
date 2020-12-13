@@ -89,7 +89,7 @@ Plug 'itchyny/calendar.vim'
 " Plug 'lyuts/vim-rtags'
 " Plug 'christoomey/vim-system-copy'
 " Plug 'vimwiki/vimwiki'
-" Plug 'hugolgst/vimsence'
+Plug 'hugolgst/vimsence'
 " Plug 'mg979/vim-visual-multi', {'branch': 'master'}
 
 call plug#end()
@@ -117,6 +117,7 @@ set noswapfile
 set nobackup
 set nowb
 set autoread
+set fillchars+=vert:\▏
 
 " ================ Environement Variables ==========
 let $MYVIMRC="$HOME/.vimrc"
@@ -216,6 +217,16 @@ let g:limelight_conceal_ctermfg = 'gray'
 let g:limelight_conceal_ctermfg = 240
 autocmd! User GoyoEnter Limelight
 autocmd! User GoyoLeave Limelight!
+
+" ================ Vimsence ==================
+let g:vimsence_client_id = '439476230543245312'
+let g:vimsence_small_text = 'Vim'
+let g:vimsence_small_image = 'vim'
+let g:vimsence_editing_details = 'Editing: {}'
+let g:vimsence_editing_state = 'Working on: {}'
+let g:vimsence_file_explorer_text = 'In FileTree'
+let g:vimsence_file_explorer_details = 'Looking for files'
+let g:vimsence_custom_icons = {'filetype': 'iconname'}
 
 " ================ Colorscheme =================
 colorscheme gruvbox

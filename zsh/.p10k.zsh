@@ -113,7 +113,11 @@
 
   ################################[ prompt_char: prompt symbol ]################################
   # Green prompt symbol if the last command succeeded. prompt_char color
+<<<<<<< HEAD
   typeset -g POWERLEVEL9K_PROMPT_CHAR_OK_{VIINS,VICMD,VIVIS,VIOWR}_FOREGROUND=047
+=======
+  typeset -g POWERLEVEL9K_PROMPT_CHAR_OK_{VIINS,VICMD,VIVIS,VIOWR}_FOREGROUND=015
+>>>>>>> 90fb887f22ade8c6f86228f11f6e8ba88f9707df
   # Red prompt symbol if the last command failed.
   typeset -g POWERLEVEL9K_PROMPT_CHAR_ERROR_{VIINS,VICMD,VIVIS,VIOWR}_FOREGROUND=001
   # Default prompt symbol.
@@ -132,10 +136,14 @@
 
   ##################################[ dir: current directory ]##################################
   # Default current directory color. dir color
+<<<<<<< HEAD
   typeset -g POWERLEVEL9K_DIR_FOREGROUND=061
   # Color of the anchor directory segments. Anchor segments are never shortened. The first
   # segment is always an anchor.
   typeset -g POWERLEVEL9K_DIR_ANCHOR_FOREGROUND=061
+=======
+  typeset -g POWERLEVEL9K_DIR_FOREGROUND=012
+>>>>>>> 90fb887f22ade8c6f86228f11f6e8ba88f9707df
   # If directory is too long, shorten some of its segments to the shortest possible unique
   # prefix. The shortened directory can be tab-completed to the original.
   typeset -g POWERLEVEL9K_SHORTEN_STRATEGY=truncate_to_unique

@@ -1,5 +1,5 @@
 #System-wide .bashrc file for interactive bash(1) shells.
-pfetch
+bitfetch
 
 # Vi mode
 set -o vi

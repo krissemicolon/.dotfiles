@@ -17,9 +17,9 @@ super + @space
 super + Escape
 	pkill -USR1 -x sxhkd
 
-# Lauch Brave-Browser
-ctrl + b
-	firefox
+# Lauch Browser
+super + w
+	brave-bin
 
 # Launch Vim
 super + v
@@ -33,6 +33,26 @@ super + q
 Print
     flameshot gui
 
+    # inport -window root ~/Pictures/screenshot.png
+      # scrot '%Y-%m-%d-%s\_$wx$h\_scrot.png' -e 'mv $f \~/Screenshots/ \&amp; feh -.d \~/Screenshots/$f'
+
+# Audio Volume Control
+XF86AudioLowerVolume
+    amixer -c 0 set Master 1%-
+
+XF86AudioMute
+    amixer -c 0 set Master toggle
+
+XF86AudioRaiseVolume
+    amixer -c 0 set Master 1%+
+
+# Brightness Control
+XF86MonBrightnessUp
+    xbacklight -inc 20
+
+XF86MonBrightnessDown
+    xbacklight -dec 20
+
 #
 # bspwm hotkeys
 #
@@ -42,7 +62,7 @@ super + alt + {q,r}
 	bspc {quit,wm -r}
 
 # close and kill
-super + {_,shift + }w
+super + {_,shift + }BackSpace
 	bspc node -{c,k}
 
 # alternate between the tiled and monocle layout
