@@ -91,4 +91,4 @@ zinit light-mode for \
 ### End of Zinit's installer chunk
 
 # Variables
-export PATH=/home/krissemicolon/.cargo/bin:$PATH
+# export PATH=/home/krissemicolon/.cargo/bin:$PATH
