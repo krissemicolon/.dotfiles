@@ -94,4 +94,4 @@ zinit light-mode for \
 export PATH=/home/krissemicolon/.cargo/bin:$PATH
 export PATH=/home/krissemicolon/Scripts:$PATH
 export PATH=/home/krissemicolon/.local/bin:$PATH
-export GPG_TTY=$(tty)
+source ~/.bash_profile

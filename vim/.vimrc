@@ -31,8 +31,6 @@ Plug 'mhinz/vim-startify'
 Plug 'https://github.com/itchyny/lightline.vim'
 Plug 'shinchu/lightline-gruvbox.vim'
 
-" --- Indent Lines ---
-Plug 'Yggdroot/indentLine'
 
 " --- Other Appearance Tweaks ---
 Plug 'ap/vim-css-color'
@@ -56,6 +54,7 @@ Plug 'mattn/emmet-vim'
 
 " --- Syntax ---
 Plug 'dense-analysis/ale'
+Plug 'vim-crystal/vim-crystal'
 
 " --- Git --
 Plug 'tpope/vim-fugitive'
@@ -84,13 +83,15 @@ Plug 'hugolgst/vimsence'
 " --- Experimental ---
 Plug 'szw/vim-maximizer'
 
-" --- Disabled --
+" -==========- Disabled -==========-
 " Plug 'neoclide/coc.nvim', {'branch': 'release'}
 " Plug 'jiangmiao/auto-pairs'
 " Plug 'lyuts/vim-rtags'
 " Plug 'christoomey/vim-system-copy'
 " Plug 'vimwiki/vimwiki'
 " Plug 'mg979/vim-visual-multi', {'branch': 'master'}
+" --- Indent Lines ---
+" Plug 'Yggdroot/indentLine'
 
 call plug#end()
 
@@ -124,8 +125,6 @@ let $MYVIMRC="$HOME/.vimrc"
 let $MYBASHRC="$HOME/.bashrc"
 let $MYBSPWMRC="$HOME/.config/bspwm/bspwmrc"
 let $MYSXHKDRC="$HOME/.config/sxhkd/sxhkdrc"
-let $MYMUTTRC="$HOME/.config/neomutt/muttrc"
-let $MYCALCURSERC="$HOME/.config/calcurse/conf"
 
 " ================ Custom Commands =================
 command! Vimrc execute ":e $MYVIMRC" 
@@ -196,7 +195,7 @@ let g:NERDTreeGitStatusIndicatorMapCustom = {
 " ================ Terminal ===================
 let g:terminal_key = "<Leader>c"
 let g:terminal_cwd = 1
-let g:terminal_height = 12
+let g:terminal_height = 24
 let g:terminal_pos = "rightbelow"
 let g:terminal_shell = "zsh"
 let g:terminal_edit = "tab drop"

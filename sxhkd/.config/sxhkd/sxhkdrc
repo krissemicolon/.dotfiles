@@ -26,7 +26,7 @@ super + w
 	brave-bin
 
 super + d 
-    brave-bin https://github.com/krissemicolon
+    alacritty --working-directory ~/Projects
 super + a
     brave-bin https://github.com/krissemicolon?tab=repositories
 
@@ -62,15 +62,23 @@ XF86AudioMute
 XF86AudioRaiseVolume
     amixer -c 0 set Master 2%+
 
+# Spotify / Music Control
+XF86AudioPrev
+    playerctl previous
+XF86AudioNext
+    playerctl next
+XF86AudioPause
+    playerctl pause
+XF86AudioPlay
+    playerctl play
+
 # Brightness Control
 XF86MonBrightnessUp
     xbacklight -inc 10
 
 XF86MonBrightnessDown
     xbacklight -dec 10
-
-#
-# bspwm hotkeys
+# # bspwm hotkeys
 #
 
 # quit/restart bspwm

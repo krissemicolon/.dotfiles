@@ -1,5 +1,4 @@
 #System-wide .bashrc file for interactive bash(1) shells.
-startx
 # Vi mode
 set -o vi
 bind -m vi-insert "\C-l":clear-screen
