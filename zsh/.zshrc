@@ -94,4 +94,5 @@ zinit light-mode for \
 export PATH=/home/krissemicolon/.cargo/bin:$PATH
 export PATH=/home/krissemicolon/Scripts:$PATH
 export PATH=/home/krissemicolon/.local/bin:$PATH
+export PATH_TO_FX=/home/krissemicolon/.jdks/javafx-sdk-11.0.2/lib
 source ~/.bash_profile

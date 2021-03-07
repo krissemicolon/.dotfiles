@@ -1,11 +1,7 @@
-"
-"         ██╗   ██╗ ██╗ ███╗   ███╗
-"    ██╗  ██║   ██║ ██║ ████╗ ████║
-"    ╚═╝  ██║   ██║ ██║ ██╔████╔██║
-"    ▄█╗  ╚██╗ ██╔╝ ██║ ██║╚██╔╝██║
-"    ▀═╝   ╚████╔╝  ██║ ██║ ╚═╝ ██║
-"           ╚═══╝   ╚═╝ ╚═╝     ╚═╝
-"
+"        ____ ____ ____ ____ 
+"       ||; |||V |||i |||m ||
+"       ||__|||__|||__|||__||
+"       |/__\|/__\|/__\|/__\|
 
 " Set Leader
 let mapleader = ";"
@@ -29,8 +25,6 @@ Plug 'mhinz/vim-startify'
 
 " --- Bar ---
 Plug 'https://github.com/itchyny/lightline.vim'
-Plug 'shinchu/lightline-gruvbox.vim'
-
 
 " --- Other Appearance Tweaks ---
 Plug 'ap/vim-css-color'
@@ -54,7 +48,6 @@ Plug 'mattn/emmet-vim'
 
 " --- Syntax ---
 Plug 'dense-analysis/ale'
-Plug 'vim-crystal/vim-crystal'
 
 " --- Git --
 Plug 'tpope/vim-fugitive'
@@ -63,9 +56,6 @@ Plug 'mbbill/undotree'
 
 " --- Manual Pages ---
 Plug 'vim-utils/vim-man'
-
-" --- Movement --
-Plug 'easymotion/vim-easymotion'
 
 " --- Terminal ---
 Plug 'skywind3000/vim-terminal-help'
@@ -92,6 +82,9 @@ Plug 'szw/vim-maximizer'
 " Plug 'mg979/vim-visual-multi', {'branch': 'master'}
 " --- Indent Lines ---
 " Plug 'Yggdroot/indentLine'
+" --- Movement --
+" Plug 'easymotion/vim-easymotion'
+" Plug 'shinchu/lightline-gruvbox.vim'
 
 call plug#end()
 
@@ -122,17 +115,13 @@ set fillchars+=vert:\▏
 
 " ================ Environement Variables ==========
 let $MYVIMRC="$HOME/.vimrc"
-let $MYBASHRC="$HOME/.bashrc"
-let $MYBSPWMRC="$HOME/.config/bspwm/bspwmrc"
-let $MYSXHKDRC="$HOME/.config/sxhkd/sxhkdrc"
+let $MYDOTFILES="$HOME/.dotfiles"
 
 " ================ Custom Commands =================
-command! Vimrc execute ":e $MYVIMRC" 
-command! Bashrc execute ":e $MYBASHRC" 
-command! Bspwmrc execute ":e $MYBSPWMRC" 
-command! Sxhkdrc execute ":e $MYSXHKDRC" 
-command! Muttrc execute ":e $MYMUTTRC" 
-command! Calcurserc execute ":e $MYCALCURSERC" 
+command! Config execute ":e $MYVIMRC" 
+command! Dots execute ":e $MYDOTFILES"
+command! Reload execute ":source $MYVIMRC"
+command! RPC execute ":DiscordReconnect"
 
 " ================ Custom Keymaps ==================
 nnoremap <Leader>e :Vifm<CR>
@@ -197,7 +186,7 @@ let g:terminal_key = "<Leader>c"
 let g:terminal_cwd = 1
 let g:terminal_height = 24
 let g:terminal_pos = "rightbelow"
-let g:terminal_shell = "zsh"
+let g:terminal_shell = "bash"
 let g:terminal_edit = "tab drop"
 let g:terminal_kill = "term"
 let g:terminal_list = 0

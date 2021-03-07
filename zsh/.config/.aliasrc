@@ -15,11 +15,12 @@ alias fg="sudo !!"
 # text editor
 alias v="vim"
 alias v.="vim ."
+alias vi="vim -u NONE $1"
 
 # Portage
 alias semerge="emerge --search "
 alias makeconf="sudo vim /etc/portage/make.conf"
-alias updg="sudo emerge --sync; sudo emerge -uDNvat @world"
+alias updg="sudo emerge --sync; sudo emerge -uDNvt @world"
 
 # Compiling
 alias mk="./configure; make; sudo make install"
