@@ -122,6 +122,7 @@ command! Config execute ":e $MYVIMRC"
 command! Dots execute ":e $MYDOTFILES"
 command! Reload execute ":source $MYVIMRC"
 command! RPC execute ":DiscordReconnect"
+command! RPCoff execute ":DiscordDisconnect"
 
 " ================ Custom Keymaps ==================
 nnoremap <Leader>e :Vifm<CR>
