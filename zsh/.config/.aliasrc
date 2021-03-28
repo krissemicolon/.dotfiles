@@ -20,14 +20,15 @@ alias vi="vim -u NONE $1"
 # Portage
 alias semerge="emerge --search "
 alias makeconf="sudo vim /etc/portage/make.conf"
-alias updg="sudo emerge --sync; sudo emerge -uDNvt @world"
+alias upall="sudo layman -S; echo Calculating dependencies...; sudo emerge --sync; sudo emerge -uDNvtq @world"
+alias syncall="sudo layman -S; sudo emerge --sync"
+alias cleanall="sudo emerge --depclean; sudo eclean-dist -d"
 
 # Compiling
 alias mk="./configure; make; sudo make install"
 
-# Project testing
-alias dh="dehashr -h"
-alias dl="dehashr -l"
+# git
+alias sclone="git clone --depth 1 "
 
 # Safety
 alias rm\ -rf\ ~="false"

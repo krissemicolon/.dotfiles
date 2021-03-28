@@ -48,6 +48,7 @@ Plug 'mattn/emmet-vim'
 
 " --- Syntax ---
 Plug 'dense-analysis/ale'
+Plug 'vim-crystal/vim-crystal'
 
 " --- Git --
 Plug 'tpope/vim-fugitive'
@@ -144,6 +145,20 @@ let g:startify_custom_header = [
             \'    ||__|||__|||__|||__||',
             \'    |/__\|/__\|/__\|/__\|',
             \ ]
+
+let g:startify_lists = [
+          \ { 'type': 'sessions',  'header': ['   Sessions']       },
+          \ { 'type': 'bookmarks', 'header': ['   Bookmarks']      },
+          \ { 'type': 'files',     'header': ['   Recent Files']   },
+          \ ]
+
+let g:startify_bookmarks = [
+            \ { 'p': '~/Projects' },
+            \ { 'c': '~/.dotfiles' },
+            \ ]
+
+let g:startify_session_autoload = 0
+let g:startify_session_dir = '~/.vim/session'
 
 " ================ Persistent Undo ==================
 " Keep undo history across sessions, by storing in file.
