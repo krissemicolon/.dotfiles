@@ -5,7 +5,7 @@ alias ,="<"
 alias ..="cd .."
 alias ../..="cd ../.."
 alias ../../..="cd ../../.."
-alias cdp="cd ~/Projects"
+alias p="cd ~/Projects"
 
 # ls
 alias ls="ls --color=auto"
