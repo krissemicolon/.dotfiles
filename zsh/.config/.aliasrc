@@ -1,3 +1,6 @@
+# misc
+alias ,="<"
+
 # cd
 alias ..="cd .."
 alias ../..="cd ../.."
@@ -20,7 +23,7 @@ alias vi="vim -u NONE $1"
 # Portage
 alias semerge="emerge --search "
 alias makeconf="sudo vim /etc/portage/make.conf"
-alias upall="sudo layman -S; echo Calculating dependencies...; sudo emerge --sync; sudo emerge -uDNvtq @world"
+alias upall="sudo layman -S; sudo emerge --sync; echo Calculating dependencies...; sudo emerge -uDNvtq @world"
 alias syncall="sudo layman -S; sudo emerge --sync"
 alias cleanall="sudo emerge --depclean; sudo eclean-dist -d"
 
