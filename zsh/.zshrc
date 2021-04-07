@@ -95,8 +95,9 @@ export PATH=/home/krissemicolon/.cargo/bin:$PATH
 export PATH=/home/krissemicolon/Scripts:$PATH
 export PATH=/home/krissemicolon/.local/bin:$PATH
 export PATH=/home/krissemicolon/.gem/ruby/2.6.0/bin:$PATH
+
 export PATH_TO_FX=/home/krissemicolon/.jdks/javafx-sdk-11.0.2/lib
-source ~/.bash_profile
+export GPG_TTY=$(tty)
 
 # opam configuration
 test -r /home/krissemicolon/.opam/opam-init/init.zsh && . /home/krissemicolon/.opam/opam-init/init.zsh > /dev/null 2> /dev/null || true
