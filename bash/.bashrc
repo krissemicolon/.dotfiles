@@ -71,9 +71,7 @@ if [ -x /usr/lib/command-not-found -o -x /usr/share/command-not-found/command-no
 fi
 
 export PS1="\[\033[38;5;10m\]\u@\H\[$(tput sgr0)\] [\[$(tput sgr0)\]\[\033[38;5;13m\]\w\[$(tput sgr0)\]]\n\[$(tput sgr0)\]\[\033[38;5;11m\]\\$\[$(tput sgr0)\] \[$(tput sgr0)\]"
-
-export PATH=/home/krissemicolon/.cargo/bin:$PATH
-
+export PATH=~/.cargo/bin:$PATH
 export GPG_TTY=$(tty)
 
 alias ls="ls --color"

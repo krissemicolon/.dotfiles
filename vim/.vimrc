@@ -29,6 +29,7 @@ Plug 'https://github.com/itchyny/lightline.vim'
 " --- Other Appearance Tweaks ---
 Plug 'ap/vim-css-color'
 Plug 'kien/rainbow_parentheses.vim'
+Plug 'RRethy/vim-illuminate'
 
 " --- File Explorers / File Tree ---
 Plug 'vifm/vifm.vim'
@@ -68,9 +69,6 @@ Plug 'tpope/vim-commentary'
 Plug 'junegunn/goyo.vim'
 Plug 'junegunn/limelight.vim'
 
-" --- Discord RP ---
-Plug 'hugolgst/vimsence'
-
 " --- Experimental ---
 Plug 'szw/vim-maximizer'
 
@@ -86,6 +84,13 @@ Plug 'szw/vim-maximizer'
 " --- Movement --
 " Plug 'easymotion/vim-easymotion'
 " Plug 'shinchu/lightline-gruvbox.vim'
+" --- Discord RP ---
+" Plug 'hugolgst/vimsence'
+" --- Formatters ---
+" Plug 'prettier/vim-prettier', {
+"   \ 'do': 'yarn install',
+"   \ 'branch': 'release/0.x'
+"   \ }
 
 call plug#end()
 
