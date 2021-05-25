@@ -69,6 +69,9 @@ Plug 'tpope/vim-commentary'
 Plug 'junegunn/goyo.vim'
 Plug 'junegunn/limelight.vim'
 
+" --- Discord RP ---
+Plug 'vimsence/vimsence'
+
 " --- Experimental ---
 Plug 'szw/vim-maximizer'
 
@@ -84,8 +87,6 @@ Plug 'szw/vim-maximizer'
 " --- Movement --
 " Plug 'easymotion/vim-easymotion'
 " Plug 'shinchu/lightline-gruvbox.vim'
-" --- Discord RP ---
-" Plug 'hugolgst/vimsence'
 " --- Formatters ---
 " Plug 'prettier/vim-prettier', {
 "   \ 'do': 'yarn install',
@@ -235,7 +236,7 @@ let g:vimsence_editing_details = 'Editing: {}'
 let g:vimsence_editing_state = 'Working on: {}'
 let g:vimsence_file_explorer_text = 'In FileTree'
 let g:vimsence_file_explorer_details = 'Looking for files'
-let g:vimsence_custom_icons = {'filetype': 'iconname'}
+" let g:vimsence_custom_icons = {'filetype': 'iconname'}
 
 " ================ Colorscheme =================
 colorscheme nord
