@@ -1,0 +1,5 @@
+{-  krissemicolon's ghci config  -}
+{-  Promts ["λ", "𝝺>"]           -}
+
+:set prompt "λ> "
+:set prompt-cont "| "
