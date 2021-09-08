@@ -23,8 +23,6 @@ alias fg="sudo !!"
 alias v="vim"
 alias v.="vim ."
 alias litevim="vim -u NONE"
-alias lvim="vim -u NONE"
-alias lv="vim -u NONE"
 
 # Portage
 alias semerge="emerge --search "

@@ -12,7 +12,7 @@
 ---------------------------------------------------------------------------
 
 -- Core
-import XMonad
+import XMonad hiding ( (|||) )
 
 -- Window stack manipulation and map creation
 import qualified XMonad.StackSet as W
