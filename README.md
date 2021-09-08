@@ -9,6 +9,8 @@
 ## Contains configurations for
 - alacritty
 - bspwm
+- xmonad
+- xmobar
 - sxhkd
 - picom / compton
 - vim
