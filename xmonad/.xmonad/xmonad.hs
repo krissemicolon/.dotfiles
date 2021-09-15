@@ -7,7 +7,7 @@
 --     _|      _|  _|      _|    _|_|    _|    _|    _|_|_|    _|_|_|    --
 --                                                                       --
 ---------------------------------------------------------------------------
--- Kris Huber <krissemicolon@gmail.com> @krissemicolon                   --
+-- Kris Huber <kris@krishuber.xyz> @krissemicolon                   --
 -- https://krishuber.xyz
 ---------------------------------------------------------------------------
 
