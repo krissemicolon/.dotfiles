@@ -96,8 +96,8 @@ myKeys conf@(XConfig {XMonad.modMask = modm}) = M.fromList $
     , ((0, xF86XK_AudioLowerVolume), spawn "pactl set-sink-volume @DEFAULT_SINK@ -10%")
     , ((0, xF86XK_AudioRaiseVolume), spawn "pactl set-sink-volume @DEFAULT_SINK@ +10%")
 
-    -- launch dmenu
-    , ((modm,               xK_space ), spawn "dmenu_run")
+    -- launch application launcher
+    , ((modm,               xK_space ), spawn "rofi -show run")
 
     -- close focused window
 

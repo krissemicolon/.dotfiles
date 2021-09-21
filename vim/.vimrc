@@ -5,6 +5,10 @@
 
 " Set Leader
 let mapleader = ";"
+" Set Bar Colorscheme
+let bar_cs = "gruvbox"
+" Set Light/Dark Mode
+set background=dark
 
 " ================ Autoinstall vim-plug ============
 if empty(glob('~/.vim/autoload/plug.vim'))
@@ -17,8 +21,12 @@ if empty(glob('~/.vim/autoload/plug.vim'))
 call plug#begin('~/.vim/plugged')
 
 " --- Colorschemes ---
-Plug 'morhetz/gruvbox'
+" (You can set the colorscheme on the bottom of this config)
 Plug 'arcticicestudio/nord-vim'
+Plug 'lisposter/vim-blackboard'
+Plug 'morhetz/gruvbox'
+" - for bar
+Plug 'shinchu/lightline-gruvbox.vim'
 
 " --- Startpage ---
 Plug 'mhinz/vim-startify'
@@ -54,6 +62,10 @@ Plug 'tpope/vim-fugitive'
 Plug 'https://github.com/airblade/vim-gitgutter.git'
 Plug 'mbbill/undotree'
 
+" --- LaTeX ---
+Plug 'lervag/vimtex'
+Plug 'xuhdev/vim-latex-live-preview', { 'for': 'tex' }
+
 " --- Manual Pages ---
 Plug 'vim-utils/vim-man'
 
@@ -66,6 +78,7 @@ Plug 'junegunn/limelight.vim'
 
 " --- Experimental ---
 Plug 'szw/vim-maximizer'
+Plug 'https://devhub.art/space-lang/space.vim'
 
 " -==========- Disabled -==========-
 " --- Terminal ---
@@ -78,10 +91,10 @@ Plug 'szw/vim-maximizer'
 " Plug 'mg979/vim-visual-multi', {'branch': 'master'}
 " Plug 'jremmen/vim-ripgrep'
 " Plug 'zxqfl/tabnine-vim'
-" --- Discord RP ---
-" Plug 'vimsence/vimsence'
 " --- Indent Lines ---
 " Plug 'Yggdroot/indentLine'
+" --- Discord RP ---
+" Plug 'vimsence/vimsence'
 " --- Movement --
 " Plug 'easymotion/vim-easymotion'
 " Plug 'shinchu/lightline-gruvbox.vim'
@@ -126,6 +139,7 @@ let $MYDOTFILES="$HOME/.dotfiles"
 command! Config execute ":e $MYVIMRC" 
 command! Dots execute ":e $MYDOTFILES"
 command! Reload execute ":source $MYVIMRC"
+command! TexP execute "LLPStartPreview"
 command! RPC execute ":DiscordReconnect"
 command! RPCoff execute ":DiscordDisconnect"
 
@@ -136,6 +150,8 @@ nnoremap <Leader>q :q<CR>
 nnoremap <Leader>w :w<CR>
 nnoremap <C-G> :Goyo<CR>
 nnoremap <Leader>m :MaximizerToggle<CR>
+
+nmap <silent> <C-L> <C-L>:nohlsearch<CR>:match<CR>:diffupdate<CR>
 
 map <Leader>h :wincmd h<CR>
 map <Leader>j :wincmd j<CR>
@@ -158,8 +174,7 @@ let g:startify_lists = [
 
 let g:startify_bookmarks = [
             \ { 'p': '~/Projects' },
-            \ { 'c': '~/.dotfiles' },
-            \ { 'x': '~/.xmonad/xmonad.hs' },
+            \ { 'd': '~/.dotfiles' },
             \ ]
 
 let g:startify_session_autoload = 0
@@ -175,7 +190,7 @@ let g:startify_session_dir = '~/.vim/session'
 
 " ================ LightLine =================
 let g:lightline = {
-      \ 'colorscheme': 'nord',
+      \ 'colorscheme': bar_cs,
       \ }
 set laststatus=2
 
@@ -212,8 +227,8 @@ let g:indentLine_char = '┆'
 " ================ LimeLight ==================
 let g:limelight_conceal_ctermfg = 'gray'
 let g:limelight_conceal_ctermfg = 240
-autocmd! User GoyoEnter Limelight
-autocmd! User GoyoLeave Limelight!
+" autocmd! User GoyoEnter Limelight
+" autocmd! User GoyoLeave Limelight!
 
 " ================ Vimsence ==================
 let g:vimsence_client_id = '439476230543245312'
@@ -225,7 +240,8 @@ let g:vimsence_file_explorer_text = 'In FileTree'
 let g:vimsence_file_explorer_details = 'Looking for files'
 " let g:vimsence_custom_icons = {'filetype': 'iconname'}
 
-" ================ Colorscheme =================
-colorscheme nord
-set background=dark
+" ================ vim-latex-live-preview ==================
+let g:livepreview_previewer = 'zathura'
 
+" ================ Colorscheme =================
+colorscheme gruvbox
