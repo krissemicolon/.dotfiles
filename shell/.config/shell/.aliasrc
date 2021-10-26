@@ -12,9 +12,9 @@ alias ../../..="cd ../../.."
 alias p="cd ~/Projects"
 
 # ls
-#alias ls="ls -G"
-alias la="ls -G -la"
-alias l.='ls -G -d .*'
+alias ls="lsd"
+alias la="ls -la"
+alias l.='ls -d .*'
 
 # sudo / doas
 alias fg="sudo !!"
