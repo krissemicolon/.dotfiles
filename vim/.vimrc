@@ -151,7 +151,9 @@ nnoremap <Leader>w :w<CR>
 nnoremap <C-G> :Goyo<CR>
 nnoremap <Leader>m :MaximizerToggle<CR>
 
-nmap <silent> <C-L> <C-L>:nohlsearch<CR>:match<CR>:diffupdate<CR>
+" Pane Resizing
+nnoremap <silent> <Leader>+ :exe "resize " . (winheight(0) * 3/2)<CR>
+nnoremap <silent> <Leader>- :exe "resize " . (winheight(0) * 2/3)<CR>
 
 map <Leader>h :wincmd h<CR>
 map <Leader>j :wincmd j<CR>

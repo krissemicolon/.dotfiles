@@ -12,27 +12,27 @@ alias ../../..="cd ../../.."
 alias p="cd ~/Projects"
 
 # ls
-#alias ls="ls -G"
+alias ls="ls --color=auto || ls -G"
 alias la="ls -G -la"
 alias l.='ls -G -d .*'
 
 # sudo / doas
-alias fg="sudo !!"
+alias fg="sudo !! || doas !!"
 
 # text editor
-alias v="vim"
-alias v.="vim ."
+alias v="nvim"
+alias v.="nvim ."
 alias litevim="vim -u NONE"
 
 # Portage
 alias semerge="emerge --search "
-alias makeconf="sudo vim /etc/portage/make.conf"
-alias upall="sudo layman -S; sudo emerge --sync; echo Calculating dependencies...; sudo emerge -uDNvtq @world; cleanall"
-alias syncall="sudo layman -S; sudo emerge --sync"
-alias cleanall="sudo emerge --depclean; sudo eclean-dist -d"
+alias makeconf="doas vim /etc/portage/make.conf || sudo vim /etc/portage/make.conf"
+alias upall="sudo layman -S || doas layman -S && sudo emerge --sync || doas emerge --sync && echo Calculating dependencies... && sudo emerge -uDNvtq @world || doas emerge -uDNvtq @world && cleanall"
+alias syncall="sudo layman -S || doas layman -S && sudo emerge --sync || doas emerge --sync"
+alias cleanall="sudo emerge --depclean || doas emerge --depclean && sudo eclean-dist -d || doas eclean-dist -d"
 
 # Compiling
-alias mk="./configure; make; sudo make install"
+alias mk="./configure && make && sudo make install || doas make install"
 
 # ==== git ====
 
