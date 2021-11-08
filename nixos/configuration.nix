@@ -117,6 +117,12 @@
     windowManager.xmonad = {
       enable = true;
       enableContribAndExtras = true;
+      extraPackages = haskellPackages: [
+        haskellPackages.xomnad-contrib
+        haskellPackages.xmonad-extras
+        haskellPackages.xmonad
+        haskellPackages.xmobar
+      ];
     };
     desktopManager.xterm.enable = false;
     displayManager.defaultSession = "none+xmonad";
