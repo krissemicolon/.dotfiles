@@ -112,15 +112,13 @@
     enable = true;
   };
 
-  services.printing = {
-    enabled = true;
-  };
-
   services.xserver = {
     enable = true;
     layout = "gb";
-    windowManager.xmonad.enable = true;
-    windowManager.xmonad.enableContribExtras = true;
+    windowManager.xmonad = {
+      enable = true;
+      enableContribAndExtras = true;
+    };
     desktopManager.xterm.enable = false;
     displayManager.defaultSession = "none+xmonad";
     displayManager = {
