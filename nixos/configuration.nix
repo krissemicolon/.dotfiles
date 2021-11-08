@@ -15,13 +15,13 @@
   boot.loader.grub.version = 2;
   boot.loader.grub.efiSupport = false;
   # boot.loader.grub.efiInstallAsRemovable = true;
-  boot.loader.grub.device = "/dev/sda";
+  boot.loader.grub.device = "/dev/vda";
 
   networking.hostName = "nixos";
   # networking.wireless.enable = true;  # Enables wireless support via wpa_supplicant.
 
   # Set your time zone.
-  time.timeZone = "Europe/Amsterdam";
+  time.timeZone = "Europe/Zurich";
 
   # The global useDHCP flag is deprecated, therefore explicitly set to false here.
   # Per-interface useDHCP will be mandatory in the future, so this generated config
@@ -50,29 +50,53 @@
   # Enable touchpad support (enabled default in most desktopManager).
 
   # Define a user account. Don't forget to set a password with ‘passwd’.
-  users.users.kris = {
-    isNormalUser = true;
-    extraGroups = [ "wheel" ];
+  users.extraGroups.wheel.gid = 0;
+  users.extraUsers.kris = {
+    createHome = true;
+    home = "/home/kris";
+    description = "Kris Huber";
+    isSystemUser = false;
+    extraGroups = [ "wheel" "disk" "video" "audio" ];
   };
 
   # List packages installed in system profile. To search, run:
   # $ nix search wget
   environment.systemPackages = with pkgs; [
-    vim
-    vifm
-    wgetpaste
-    wget
-    firefox
-    bspwm
-    sxhkd
-    git
-    stow
-    tmux
+    # nix
+    nix
+    binutils
+
+    # util
     zsh
-    polybar
+    stow
+    wget
+    doas
+
+    # term
     alacritty
-    neofetch
+
+    # dev tools
+    neovim
+    tmux
+    gitAndTools.gitFull
+
+    # dev languages
+    gcc
+    rustup
+    haskellPackages.haskellPlatform
+    
+    # misc
+    wgetpaste
     nerdfonts
+
+    # web
+    firefox
+
+    # xmonad
+    haskellPackages.xmobar
+    haskellPackages.xmonad
+    haskellPackages.xmonadContrib
+    haskellPackages.xmonadExtras
   ];
 
   # Some programs need SUID wrappers, can be configured further or are
@@ -89,7 +113,7 @@
     xserver = {
       enable = true;
       desktopManager.gnome.enable = true;
-      #windowManager.bspwm.enable = true;
+      windowManager.xmonad.enable = true;
       videoDrivers = [ "r128" ];
       layout = "us";
       xkbOptions = "eurosign:e";
@@ -97,6 +121,33 @@
     };
     openssh = { enable = false; };
   };
+
+  services.xserver = {
+    enable = true;
+    layout = "gb";
+    windowManager.xmonad.enable = true;
+    windowManager.default = "xmonad";
+    desktopManager.xterm.enable = false;
+    desktopManager.default = "none";
+    startOpenSSHAgent = true;
+    displayManager = {
+      slim = {
+        enable = true;
+        defaultUser = "kris";
+      };
+    };
+    wacom.enable = true;
+  };
+
+  services.printing.enable = true;
+  # Show the manual on virtual console 8 :
+  services.nixosManual.showManual = true;
+
+  fileSystems = [
+    { mountPoint = "/";
+      label = "nixos";
+    }
+  ];
 
   # Enable the OpenSSH daemon.
 
