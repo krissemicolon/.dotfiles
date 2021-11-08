@@ -10,13 +10,10 @@
       ./hardware-configuration.nix
     ];
 
-  # Use the GRUB 2 boot loader.
-  boot.loader.grub.enable = true;
-  boot.loader.grub.version = 2;
-  boot.loader.grub.efiSupport = true;
+  # Use the systemd-boot EFI boot loader
   boot.loader.systemd-boot.enable = true;
-  # boot.loader.grub.efiInstallAsRemovable = true;
-  # boot.loader.grub.device = "/dev/vda";
+  boot.loader.efi.canTouchEfiVariables = true;
+  boot.initrd.checkJournalingFS= false;
 
   networking.hostName = "nixos";
   # networking.wireless.enable = true;  # Enables wireless support via wpa_supplicant.
@@ -51,12 +48,11 @@
   # Enable touchpad support (enabled default in most desktopManager).
 
   # Define a user account. Don't forget to set a password with ‘passwd’.
-  users.extraGroups.wheel.gid = 0;
   users.extraUsers.kris = {
     createHome = true;
     home = "/home/kris";
     description = "Kris Huber";
-    isSystemUser = false;
+    isNormalUser = true;
     extraGroups = [ "wheel" "disk" "video" "audio" ];
   };
 
@@ -83,21 +79,23 @@
 
     # dev languages
     gcc
+    ghc
     rustup
-    haskellPackages.haskellPlatform
+    #haskellPackages.haskellPlatform
     
     # misc
     wgetpaste
     nerdfonts
 
-    # web
+    # net
+    networkmanager
     firefox
 
     # xmonad
     haskellPackages.xmobar
     haskellPackages.xmonad
-    haskellPackages.xmonadContrib
-    haskellPackages.xmonadExtras
+    haskellPackages.xmonad-contrib
+    haskellPackages.xmonad-extras
   ];
 
   # Some programs need SUID wrappers, can be configured further or are
@@ -109,46 +107,29 @@
   };
 
   # List services that you want to enable:
-  
-  services = {
-    xserver = {
-      enable = true;
-      desktopManager.gnome.enable = true;
-      windowManager.xmonad.enable = true;
-      videoDrivers = [ "r128" ];
-      layout = "us";
-      xkbOptions = "eurosign:e";
-      libinput.enable = true;
-    };
-    openssh = { enable = false; };
+
+  services.networkmanager = {
+    enable = true;
+  };
+
+  services.printing = {
+    enabled = true;
   };
 
   services.xserver = {
     enable = true;
     layout = "gb";
     windowManager.xmonad.enable = true;
-    windowManager.default = "xmonad";
+    windowManager.xmonad.enableContribExtras = true;
     desktopManager.xterm.enable = false;
-    desktopManager.default = "none";
-    startOpenSSHAgent = true;
+    displayManager.defaultSession = "none+xmonad";
     displayManager = {
-      slim = {
+      lightdm = {
         enable = true;
-        defaultUser = "kris";
       };
     };
     wacom.enable = true;
   };
-
-  services.printing.enable = true;
-  # Show the manual on virtual console 8 :
-  services.nixosManual.showManual = true;
-
-  fileSystems = [
-    { mountPoint = "/";
-      label = "nixos";
-    }
-  ];
 
   # Enable the OpenSSH daemon.
 
