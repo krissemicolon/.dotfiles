@@ -85,7 +85,6 @@
     
     # misc
     wgetpaste
-    nerdfonts
 
     # net
     networkmanager
