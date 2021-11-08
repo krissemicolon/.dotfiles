@@ -108,7 +108,7 @@
 
   # List services that you want to enable:
 
-  services.networkmanager = {
+  networking.networkmanager = {
     enable = true;
   };
 
