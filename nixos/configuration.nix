@@ -118,7 +118,7 @@
       enable = true;
       enableContribAndExtras = true;
       extraPackages = haskellPackages: [
-        haskellPackages.xomnad-contrib
+        haskellPackages.xmonad-contrib
         haskellPackages.xmonad-extras
         haskellPackages.xmonad
         haskellPackages.xmobar
