@@ -24,11 +24,13 @@ import System.Exit
 import Graphics.X11.ExtraTypes.XF86
 import XMonad.Hooks.DynamicLog
 import XMonad.Util.Themes
+import XMonad.Hooks.SetWMName
 
 -- Layout Misc
 import XMonad.Layout.Spacing
 import XMonad.Layout.NoBorders
 import XMonad.Layout.LayoutCombinators
+import XMonad.Layout.Gaps
 
 -- Layouts
 import XMonad.Layout.Tabbed
@@ -43,7 +45,7 @@ import XMonad.Layout.BinarySpacePartition
 -- certain contrib modules.
 --
 myTerminal      = "alacritty"
-myBrowser       = "brave-bin"
+myBrowser       = "brave"
 
 -- Whether focus follows the mouse pointer.
 myFocusFollowsMouse :: Bool
@@ -77,8 +79,11 @@ myWorkspaces    = ["1","2","3","4","5","6","7","8","9"]
 
 -- Border colors for unfocused and focused windows, respectively.
 --
-myNormalBorderColor  = "#000000"
-myFocusedBorderColor = "#ffffff"
+myNormalBorderColor  = "#2E3440"
+myFocusedBorderColor = "#D8DEE9"
+
+-- myNormalBorderColor  = "#000000"
+-- myFocusedBorderColor = "#ffffff"
 
 ------------------------------------------------------------------------
 -- Key bindings. Add, modify or remove key bindings here.
@@ -92,9 +97,9 @@ myKeys conf@(XConfig {XMonad.modMask = modm}) = M.fromList $
     , ((modm,               xK_i ), spawn myBrowser)
     
     -- volume keys
-    , ((0, xF86XK_AudioMute), spawn "pactl set-sink-mute @DEFAULT_SINK@ toggle")
-    , ((0, xF86XK_AudioLowerVolume), spawn "pactl set-sink-volume @DEFAULT_SINK@ -10%")
-    , ((0, xF86XK_AudioRaiseVolume), spawn "pactl set-sink-volume @DEFAULT_SINK@ +10%")
+    , ((0, xF86XK_AudioMute), spawn "amixer -D pipewire set Master 1+ toggle")
+    , ((0, xF86XK_AudioLowerVolume), spawn "amixer -D pipewire sset Master 2%-")
+    , ((0, xF86XK_AudioRaiseVolume), spawn "amixer -D pipewire sset Master 2%+")
 
     -- launch application launcher
     , ((modm,               xK_space ), spawn "rofi -show run")
@@ -213,7 +218,7 @@ myMouseBindings (XConfig {XMonad.modMask = modm}) = M.fromList $
 -- The available layouts.  Note that each layout is separated by |||,
 -- which denotes layout choice.
 --
-myLayout = tiled ||| Mirror tiled ||| simpleTabbed ||| ThreeCol 1 (3/100) (1/2) ||| noBorders Full
+myLayout = spacing 4 $ tiled ||| Mirror tiled ||| simpleTabbed ||| noBorders Full
   where
      -- default tiling algorithm partitions the screen into two panes
      tiled   = Tall nmaster delta ratio
@@ -229,6 +234,9 @@ myLayout = tiled ||| Mirror tiled ||| simpleTabbed ||| ThreeCol 1 (3/100) (1/2) 
 
 -----------------
 -- Tabbed
+-- myTabConfig = def { inactiveBorderColor = "#2E3440"
+--                   , activeTextColor = "#D08770"}
+
 myTabConfig = def { inactiveBorderColor = "#2E3440"
                   , activeTextColor = "#4C566A"}
 
@@ -280,7 +288,7 @@ myLogHook = return ()
 -- per-workspace layout choices.
 --
 -- By default, do nothing.
-myStartupHook = return ()
+myStartupHook = setWMName "LG3D" -- for java swing apps
 
 ------------------------------------------------------------------------
 -- Command to launch the bar.

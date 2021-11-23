@@ -108,16 +108,17 @@ font:
     #   - (Linux/BSD) monospace
     #   - (Windows) Consolas
     # family: MesloLGS NF
-    family: BlexMono Nerd Font          # Linux
-    family: BlexMono Nerd Font Mono     # MacOS
+    # family: BlexMono Nerd Font          # Linux
+    # family: BlexMono Nerd Font Mono     # MacOS
+    family: SpaceMono Nerd Font
     # family: SpaceMono Nerd Font Mono
     # family: FiraMono Nerd Font
     # family: undefined medium 
     # family: scientifica
     
     # The `style` can be specified to pick a specific face.
-    style: Book       # MacOS
-    #style: regular   # Linux
+    #style: Book       # MacOS
+    style: regular   # Linux
 
   # Bold font face
   #bold:
@@ -434,8 +435,8 @@ live_config_reload: true
 #   - (macOS) /bin/bash --login
 #   - (Linux/BSD) user login shell
 #   - (Windows) powershell
-shell:
-  program: /bin/zsh
+#shell:
+  #program: /bin/zsh
 #  args:
 #    - --login
 
