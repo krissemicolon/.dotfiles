@@ -1,7 +1,7 @@
 Config { 
 
    -- appearance
-     font =         "xft:SpaceMono Nerd Font:pixelsize=16:antialias=true:hinting=true"
+     font =         "xft:Hasklug Nerd Font Mono:pixelsize=16:antialias=true:hinting=true"
    , bgColor =      "#2E3440"
    , fgColor =      "#D8DEE9"
    , position =     Top
