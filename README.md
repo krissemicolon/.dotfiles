@@ -32,7 +32,7 @@
 
 ### 1. Clone the repository to `~`
 ```sh
-git clone https://devhub.ml/krissemicolon/.dotfiles
+git clone https://github.com/krissemicolon/.dotfiles
 cd .dotfiles
 ```
 
