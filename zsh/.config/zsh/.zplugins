@@ -1,23 +1,12 @@
-# source ~/.zplug/init.zsh
-
-
-# # Install plugins if there are plugins that have not been installed
-# if ! zplug check --verbose; then
-#         printf "Install? [y/N]: "
-#             if read -q; then
-#                         echo; zplug install
-#                             fi
-#                             fi
-
-# # Then, source plugins and add commands to $PATH
-# zplug load --verbose
-
-# Syntax
+# Suggestions
 zinit light zsh-users/zsh-autosuggestions
-zinit light zdharma/fast-syntax-highlighting
 
-# Prompt & Theme
-zinit ice depth=1; zinit light romkatv/powerlevel10k
+zinit light zsh-users/zsh-syntax-highlighting
 
-# zplugin ice wait'0' lucid
-# zplugin load desyncr/auto-ls
+# History Substring
+zinit light zsh-users/zsh-history-substring-search
+bindkey '^[[A' history-substring-search-up # or '\eOA'
+bindkey '^[[B' history-substring-search-down # or '\eOB'
+bindkey -M emacs '^P' history-substring-search-up
+bindkey -M emacs '^N' history-substring-search-down
+HISTORY_SUBSTRING_SEARCH_ENSURE_UNIQUE=1

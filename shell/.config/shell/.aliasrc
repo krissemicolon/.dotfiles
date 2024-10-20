@@ -1,23 +1,19 @@
 # misc
-alias ,="<"
 alias t="touch"
 
 # tty
 alias ttybig="setfont ter-128n"
 
 # cd
-alias ..="cd .."
-#alias ../..="cd ../.."
-#alias ../../..="cd ../../.."
 alias p="cd ~/Projects"
 
 # ls
-alias ls="lsd"
-alias la="ls -la"
+alias la="ls -lah"
 alias l.='ls -d .*'
 
 # sudo / doas
-alias fg="sudo !! || doas !!"
+alias sudol="sudo !!"
+alias doasl="doas !!"
 
 # text editor
 alias v="nvim"
@@ -32,7 +28,7 @@ alias syncall="sudo layman -S || doas layman -S && sudo emerge --sync || doas em
 alias cleanall="sudo emerge --depclean || doas emerge --depclean && sudo eclean-dist -d || doas eclean-dist -d"
 
 # Compiling
-alias mk="./configure && make && sudo make install || doas make install"
+alias mk="./configure && make && sudo make install"
 
 # ==== git ====
 
@@ -167,5 +163,8 @@ alias gtl='git tag -l'
 # Hedral Thingies
 alias gpm="git checkout main; git merge develop; git push; git checkout develop"
 function sm() {
+	surrealdb-migrations "$@"
+}
+function smc() {
 	surrealdb-migrations "$@" $(./smc.sh)
 }
