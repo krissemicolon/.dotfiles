@@ -1,6 +1,9 @@
 # Setting GPG_TTY for git commit signing
 export GPG_TTY=$(tty)
 
+# Default Prompt
+PS1="%n@%m %1~ %# "
+
 # Options
 autoload -U colors && colors # Enable colors
 setopt autocd # cd without typing 'cd'
