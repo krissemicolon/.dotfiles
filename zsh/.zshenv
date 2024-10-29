@@ -2,4 +2,4 @@ export EDITOR=vim
 
 export PATH=~/.local/bin:$PATH
 
-. "$HOME/.cargo/env"
+[ -f "$HOME/.cargo/env" ]  && source "$HOME/.cargo/env"
