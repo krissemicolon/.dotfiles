@@ -1,5 +1,4 @@
 # ==== git ====
-
 # pull
 alias gl='git pull'
 alias glum='git pull upstream $(get_default_branch)'
@@ -129,8 +128,33 @@ alias gt='git tag'
 alias gta='git tag -a'
 alias gtd='git tag -d'
 alias gtl='git tag -l'
-
 # ==== end git ====
+
+# ==== docker ====
+# Utility
+alias d='docker'
+alias dps='docker ps'
+alias dpsa='docker ps --all'
+alias dc='docker compose'
+alias dcps='docker compose ps'
+
+# General Docker commands
+alias dipr="docker image prune"
+alias di="docker images"
+alias dirm="docker image rm"
+alias dils="docker image ls"
+alias dcrm="docker container rm"
+
+# Docker Compose commands
+alias dcps="docker compose ps"
+alias dcu="docker compose up"
+alias dcud="docker compose up -d"
+alias dcub="docker compose up --build"
+alias dcubd="docker compose up --build -d"
+alias dcudb="docker compose up --build -d"
+alias dcd="docker compose down"
+alias dcdown="docker compose down"
+# ==== end docker ====
 
 # magit
 alias magit="emacs --no-window-system --eval '(magit-status-here)'"
