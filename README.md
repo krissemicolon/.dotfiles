@@ -7,6 +7,7 @@
 > Config for vim, zsh, bspwm & more
 
 ## Contains configurations for
+- ghostty
 - alacritty
 - bspwm
 - xmonad
