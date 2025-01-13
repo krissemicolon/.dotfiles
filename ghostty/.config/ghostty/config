@@ -1,0 +1,5 @@
+font-family = "SF Mono Regular"
+font-size = 13
+font-feature = -liga
+
+resize-overlay = never

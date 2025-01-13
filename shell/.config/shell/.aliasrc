@@ -196,7 +196,7 @@ alias mk="./configure && make && sudo make install"
 alias ssh="mosh"
 
 # Hedral Thingies 
-alias gpm="git checkout main; git merge develop; git push; git checkout develop; ./notify-deployment.sh || echo 'No notif script found'"
+alias gpm="git checkout main; git merge develop; git push; git checkout develop; sleep 2; (test -f notify-deployment.sh && ./notify-deployment.sh) || echo 'No notif script found'"
 function sm() {
 	surrealdb-migrations "$@"
 }
